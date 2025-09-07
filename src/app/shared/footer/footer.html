@@ -1,0 +1,59 @@
+<!-- GSAP-style Footer -->
+<footer class="gsap-footer">
+  <div class="footer-content">
+    <!-- Newsletter Section -->
+    <div class="newsletter-section">
+      <h3>Keep in the loop with the STUREG® newsletter.</h3>
+      <form class="newsletter-form" (submit)="onNewsletterSubmit($event)">
+        <div class="input-group">
+          <input type="email" placeholder="Email Address" required>
+          <button type="submit" class="submit-btn">
+            <span class="arrow-icon">→</span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- STUREG Links Section -->
+    <div class="links-section">
+      <h3>STUREG</h3>
+      <ul class="footer-links">
+        <li><a href="#" class="footer-link">Blog</a></li>
+        <li><a href="#" class="footer-link">Showcase</a></li>
+        <li><a href="#" class="footer-link">Learn STUREG</a></li>
+        <li><a href="#" class="footer-link">STUREG & Webflow</a></li>
+        <li><a href="#" class="footer-link">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Connect Section -->
+    <div class="connect-section">
+      <h3>Connect</h3>
+      <ul class="footer-links">
+        <li><a href="#" class="footer-link">Forums</a></li>
+        <li><a href="#" class="footer-link">Codepen</a></li>
+        <li><a href="#" class="footer-link">LinkedIn</a></li>
+        <li><a href="#" class="footer-link">Bluesky</a></li>
+        <li><a href="#" class="footer-link">GitHub</a></li>
+        <li><a href="#" class="footer-link">X</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-content">
+      <div class="copyright">
+        ©{{ currentYear }} STUREG - A Student Registration Portal. All rights reserved.
+      </div>
+    <div class="logo-section">
+      <div class="stureg-logo">STUREG</div>
+    </div>
+      <div class="legal-links">
+        <a href="#" class="legal-link">Privacy Policy</a>
+        <span class="separator">.</span>
+        <a href="#" class="legal-link">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>

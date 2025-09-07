@@ -1,0 +1,28 @@
+<!-- GSAP-style Header -->
+<div class="gsap-header">
+  <!-- Green Banner -->
+  <div class="banner">
+    <div class="banner-content">
+      <span class="banner-icon">📢</span>
+      <span>Student Registration Portal is now live, thanks to our amazing team!</span>
+    </div>
+  </div>
+
+  <!-- Navigation Header -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <div class="logo" (click)="goToHome()">STUREG</div>
+      <nav class="nav-links">
+        <a href="#" class="nav-link" (click)="goToHome()">Home</a>
+        <a href="javascript:void(0)" class="nav-link" (click)="goToAbout()">About</a>
+        <a href="javascript:void(0)" class="nav-link" (click)="goToComplaint()">Complaint</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="login-btn" *ngIf="!(isLoggedIn$ | async)" (click)="goToLogin()">Login</button>
+        <button class="register-btn" *ngIf="!(isLoggedIn$ | async)" (click)="goToRegister()">Register</button>
+        <button class="logout-btn" *ngIf="isLoggedIn$ | async" (click)="signOut()">Logout</button>
+        <button class="dark-toggle-btn" (click)="toggleDarkMode()">🌙 Dark Mode</button>
+      </div>
+    </div>
+  </header>
+</div>

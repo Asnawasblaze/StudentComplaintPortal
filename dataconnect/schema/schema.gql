@@ -1,0 +1,22 @@
+type User @table {
+  email: String!
+  createdAt: Timestamp!
+  displayName: String
+  photoUrl: String
+}
+
+type Complaint @table {
+  subject: String!
+  description: String!
+  status: String!
+  createdAt: Timestamp!
+  updatedAt: Timestamp
+  student: User
+}
+
+type ComplaintNote @table {
+  content: String!
+  createdAt: Timestamp!
+  complaint: Complaint
+  author: User
+}

@@ -1,0 +1,30 @@
+mutation CreateComplaint @auth(level: USER) {
+  complaint_insert(data: {
+    description: "New complaint",
+    status: "Open",
+    subject: "General issue"
+  })
+}
+
+query ListComplaints @auth(level: USER) {
+  complaints {
+    id
+    description
+    status
+    subject
+  }
+}
+
+mutation AddComplaintNote {
+  complaintNote_insert(data: {
+    content: "Note for complaint"
+  })
+}
+
+query GetUser @auth(level: USER) {
+  user(key: {id: "550e8400-e29b-41d4-a716-446655440000"}) {
+    id
+    displayName
+    email
+  }
+}

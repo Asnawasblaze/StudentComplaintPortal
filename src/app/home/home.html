@@ -1,0 +1,88 @@
+<!-- GSAP-style Homepage -->
+<div class="gsap-homepage">
+  <!-- Shared Header -->
+  <app-header></app-header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Left Sidebar -->
+    <div class="left-sidebar">
+      <div class="vertical-text">W.</div>
+      <div class="vertical-text">Site of the Day</div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <h1 class="hero-title">
+        <span class="title-line">Student</span>
+        <span class="title-line">Complaint</span>
+        <span class="title-line">Portal</span>
+        <div class="animated-element flower">🌸</div>
+        <div class="animated-element wave">🌊</div>
+      </h1>
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="bottom-section">
+      <div class="description-box">
+        <div class="curly-braces">{{ '{' }}</div>
+        <div class="description-text">
+          STUREG - A powerful student complaint portal built for modern education
+        </div>
+        <div class="curly-braces">{{ '}' }}</div>
+      </div>
+      
+      <button class="cta-button" *ngIf="isLoggedIn$ | async; else loginPrompt">
+        <span>Go to Dashboard</span>
+        <span class="arrow">↓</span>
+      </button>
+      
+      <ng-template #loginPrompt>
+        <button class="cta-button" (click)="goToLogin()">
+          <span>Get Started</span>
+          <span class="arrow">↓</span>
+        </button>
+      </ng-template>
+    </div>
+
+    <!-- User Profile (when logged in) -->
+    <div class="user-profile" *ngIf="isLoggedIn$ | async">
+      <div class="profile-card" *ngIf="userProfile$ | async as user; else loading">
+        <div class="profile-header">
+          <img [src]="user.photoURL" alt="Profile Photo" *ngIf="user.photoURL" class="profile-image" />
+          <div class="profile-info">
+            <h3>{{ user.name }}</h3>
+            <p>{{ user.email }}</p>
+          </div>
+        </div>
+        <div class="profile-details">
+          <div class="detail-item">
+            <span class="label">SRN:</span>
+            <span class="value">{{ user.srn }}</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Department:</span>
+            <span class="value">{{ user.department }}</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">School:</span>
+            <span class="value">{{ user.school }}</span>
+          </div>
+        </div>
+        <div class="profile-actions">
+          <button class="action-btn complaint-btn" (click)="goToComplaint()">Submit Complaint</button>
+        </div>
+      </div>
+      
+      <ng-template #loading>
+        <div class="loading-card">
+          <div class="loading-spinner"></div>
+          <p>Loading user profile...</p>
+        </div>
+      </ng-template>
+    </div>
+  </main>
+
+  <!-- Shared Footer -->
+  <app-footer></app-footer>
+</div>
