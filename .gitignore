@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 # Compiled output
@@ -45,3 +46,8 @@ Thumbs.db
 .firebase
 *-debug.log
 .runtimeconfig.json
+=======
+# Build folder and log file
+build/
+build.log
+>>>>>>> de992bb7c1bc19061ec55f6b72eb71742fb9fca1
