@@ -94,8 +94,8 @@ export class ComplaintComponent implements OnInit {
           complaintText: this.complaintForm.value.complaintText
         };
         await this.complaintService.submitComplaint(complaintData);
-        this.submissionStatus = 'Complaint submitted successfully!';
-        this.complaintForm.reset();
+        alert('Complaint submitted successfully!');
+        this.router.navigate(['/']);
       }
     }
   }

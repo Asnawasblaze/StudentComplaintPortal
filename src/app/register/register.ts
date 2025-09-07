@@ -90,7 +90,8 @@ async onSubmit() {
         };
 
         await this.userService.saveUserProfile(result.user, additionalData);
-        this.router.navigate(['/home']);
+        alert('Registration successful!');
+        this.router.navigate(['/']);
       }
     } catch (error) {
       console.error('Registration failed:', error);
@@ -123,7 +124,8 @@ async onSubmit() {
           await this.userService.saveUserProfile(firebaseUser, additionalData);
         }
         
-        this.router.navigate(['/home']);
+        alert('Google sign-up successful!');
+        this.router.navigate(['/']);
       }
     } catch (error) {
       console.error('Google sign-up failed:', error);

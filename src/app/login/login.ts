@@ -48,7 +48,8 @@ export class LoginComponent implements OnInit {
             alert('Please complete your registration first. You will be redirected to the sign-up page.');
             this.router.navigate(['/register']);
           } else {
-            this.router.navigate(['/home']);
+            alert('Login successful!');
+            this.router.navigate(['/']);
           }
         }
       } catch (error) {
@@ -72,7 +73,8 @@ export class LoginComponent implements OnInit {
         if (!userProfile) {
           this.router.navigate(['/register']);
         } else {
-          this.router.navigate(['/home']);
+          alert('Google sign-in successful!');
+          this.router.navigate(['/']);
         }
       }
     } catch (error) {
